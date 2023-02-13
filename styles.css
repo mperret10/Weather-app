@@ -5,25 +5,27 @@
   padding-top: 100px;
   width: 100%;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   color: rgb(39, 33, 68);
 }
-
+.temperature {
+  font-size: 20px;
+}
 .city {
-  text-align: right;
+  text-align: left;
   font-size: 15px;
 }
 .units {
-  text-align: left;
   font-size: 15px;
   font-weight: thin;
+  display: block;
 }
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-li.description {
+.description {
   display: inline;
   text-transform: capitalize;
 }
@@ -34,7 +36,6 @@ footer {
   padding: 30px 50px;
   padding-bottom: 60px;
   font-size: 15px;
-  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
   height: 50px;
   width: max-content;
   font-family: "josefin Sans", sans-serif;
@@ -45,18 +46,70 @@ a {
   text-decoration: none;
 }
 
-button {
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+  font-size: 11px;
   display: block;
   margin: 0 auto;
-  padding: 10px 5px;
-  margin-bottom: 40px;
-  margin-top: 30px;
-  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-  color: black;
-  border-radius: 30px;
-  border: solid thin white;
+  margin-bottom: 50px;
 }
+
+.btn-1 {
+  background: rgb(96, 9, 240);
+  background: linear-gradient(
+    0deg,
+    rgba(96, 9, 240, 1) 0%,
+    rgba(129, 5, 240, 1) 100%
+  );
+  border: 20px;
+}
+
+.btn-1:before {
+  height: 0%;
+  width: 2px;
+}
+
+.btn-1:hover {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
 .Repository-btn {
+  font-size: 14px;
   color: #cfd9df;
   border-color: #cfd9df;
+  background: rgb(96, 9, 240);
+  background: linear-gradient(
+    0deg,
+    rgba(96, 9, 240, 1) 0%,
+    rgba(129, 5, 240, 1) 100%
+  );
+  border: none;
+}
+.container {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-size: 15px;
+
+  height: max-content;
+  width: max-content;
+  font-family: "josefin Sans", sans-serif;
+  color: rgb(39, 33, 68);
 }
