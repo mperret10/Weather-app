@@ -171,26 +171,31 @@
 
       function showWeather(response) {
         let tempElement = document.querySelector("#temperature");
-        let cityElement = document.querySelector("#city");
-        let descriptionElement = document.querySelector("#description");
-        let humidityElement = document.querySelector("#humidity");
-        let windElement = document.querySelector("#wind");
-        let iconElement = document.querySelector("icon");
-
         tempElement.innerHTML = Math.round(response.data.main.temp);
+
+        let cityElement = document.querySelector("#city");
         cityElement.innerHTML = response.data.name;
-        descriptionElement.innerHTML = response.data.weather[0].description;
+
+        let descriptionElement = document.querySelector("#description");
+
+        let humidityElement = document.querySelector("#humidity");
         humidityElement.innerHTML = response.data.main.humidity;
+
+        let windElement = document.querySelector("#wind");
         windElement.innerHTML = Math.round(response.data.wind.speed);
+
+        let iconElement = document.querySelector("icon");
         iconElement.setAttribute(
           "src",
           `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
         );
         iconElement.setAttribute("alt", response.data.weather[0].description);
       }
-      let apiKey = "9d4d9c743t460of9a295aebfadb92dcc";
+
+      let apiKey = "c9f3887f5b2eaad1e3195ff960a437ea";
       let city = `${search}`;
       let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
       axios.get(url).then(showWeather);
     </script>
   </body>
