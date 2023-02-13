@@ -17,19 +17,6 @@ if (minutes < 10) {
 }
 h4.innerHTML = `${day} ${hours}:${minutes}`;
 
-function search(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-text-input");
-  let city = document.querySelector("#city");
-  if (searchInput.value) {
-    city.innerHTML = `${searchInput.value}`;
-  } else {
-    alert("Please enter a city...");
-  }
-}
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
-
 function showWeather(response) {
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = Math.round(response.data.main.temp);
@@ -38,6 +25,7 @@ function showWeather(response) {
   cityElement.innerHTML = response.data.name;
 
   let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
 
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.main.humidity;
@@ -53,8 +41,22 @@ function showWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "c9f3887f5b2eaad1e3195ff960a437ea";
-let city = `${search}`;
-let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "c9f3887f5b2eaad1e3195ff960a437ea";
+  let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(url).then(showWeather);
+}
 
-axios.get(url).then(showWeather);
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-text-input");
+  let city = document.querySelector("#city");
+  if (searchInput.value) {
+    city.innerHTML = `${searchInput.value}`;
+  } else {
+    alert("Please enter a city...");
+  }
+  search(searchInput.value);
+}
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

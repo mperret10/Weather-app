@@ -12,71 +12,9 @@
       crossorigin="anonymous"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <style>
-    .header {
-      line-height: 20px;
-      display: block;
-      text-align: center;
-      padding-top: 100px;
-      width: 100%;
-      font-family: "Josefin Sans", sans-serif;
-      font-size: 20px;
-      color: rgb(39, 33, 68);
-    }
 
-    .city {
-      text-align: right;
-      font-size: 15px;
-    }
-    .units {
-      text-align: left;
-      font-size: 15px;
-      font-weight: thin;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    li.description {
-      display: inline;
-    }
-    footer {
-      text-align: center;
-      display: block;
-      margin: 0 auto;
-      padding: 30px 50px;
-      padding-bottom: 60px;
-      font-size: 15px;
-      background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-      height: 50px;
-      width: max-content;
-      font-family: "josefin Sans", sans-serif;
-      color: rgb(39, 33, 68);
-    }
-    a {
-      color: rgb(39, 33, 68);
-      text-decoration: none;
-    }
-
-    button {
-      display: block;
-      margin: 0 auto;
-      padding: 10px 5px;
-      margin-bottom: 40px;
-      margin-top: 30px;
-      background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-      color: black;
-      border-radius: 30px;
-      border: solid thin white;
-    }
-    .Repository-btn {
-      color: #cfd9df;
-      border-color: #cfd9df;
-    }
-  </style>
   <body>
     <div class="header">
       <form id="search-form">
@@ -96,7 +34,7 @@
         <div class="col-6">
           <h4>Today's Date</h4>
           <div class="city" id="city">...</div>
-          <div class="clearfix weqther-temperature">
+          <div class="clearfix weather-temperature">
             <img src alt="clear" id="icon" class="float-left" />
           </div>
           <strong id="temperature">0</strong>
@@ -107,7 +45,8 @@
           </span>
         </div>
         <div class="col-6">
-          <ul id="description">
+          <ul>
+            <li id="description"></li>
             <li>
               Humidity:
               <span id="humidity"></span>
@@ -135,68 +74,6 @@
         >
       </div>
     </footer>
-
-    <script>
-      let now = new Date();
-      let h4 = document.querySelector("h4");
-      let days = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ];
-      let day = days[now.getDay()];
-      let hours = now.getHours();
-      let minutes = now.getMinutes();
-      if (minutes < 10) {
-        minutes = `0${minutes}`;
-      }
-      h4.innerHTML = `${day} ${hours}:${minutes}`;
-
-      function search(event) {
-        event.preventDefault();
-        let searchInput = document.querySelector("#search-text-input");
-        let city = document.querySelector("#city");
-        if (searchInput.value) {
-          city.innerHTML = `${searchInput.value}`;
-        } else {
-          alert("Please enter a city...");
-        }
-      }
-      let form = document.querySelector("#search-form");
-      form.addEventListener("submit", search);
-
-      function showWeather(response) {
-        let tempElement = document.querySelector("#temperature");
-        tempElement.innerHTML = Math.round(response.data.main.temp);
-
-        let cityElement = document.querySelector("#city");
-        cityElement.innerHTML = response.data.name;
-
-        let descriptionElement = document.querySelector("#description");
-
-        let humidityElement = document.querySelector("#humidity");
-        humidityElement.innerHTML = response.data.main.humidity;
-
-        let windElement = document.querySelector("#wind");
-        windElement.innerHTML = Math.round(response.data.wind.speed);
-
-        let iconElement = document.querySelector("icon");
-        iconElement.setAttribute(
-          "src",
-          `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-        );
-        iconElement.setAttribute("alt", response.data.weather[0].description);
-      }
-
-      let apiKey = "c9f3887f5b2eaad1e3195ff960a437ea";
-      let city = `${search}`;
-      let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-
-      axios.get(url).then(showWeather);
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>
