@@ -16,54 +16,54 @@
   </head>
 
   <body>
-    <div class="header">
-      <form id="search-form">
-        <input
-          type="search"
-          placeholder="Search for a City..."
-          autocomplete="off"
-          autofocus="on"
-          id="search-text-input"
-        />
-        <input type="submit" value="Search" />
-      </form>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <h4>Today's Date</h4>
-          <div class="city" id="city">...</div>
-          <div class="api weather-icons">
-            <img src id="icon" class="float-left" />
+    <div class="weather-app-wrapper">
+      <div class="header">
+        <form id="search-form">
+          <input
+            type="search"
+            placeholder="Search for a City..."
+            autocomplete="off"
+            autofocus="on"
+            id="search-text-input"
+          />
+          <input type="submit" value="Search" />
+        </form>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h4>Today's Date</h4>
+            <div class="city" id="city"></div>
+            <div class="api weather-icons">
+              <img src id="icon" class="float-left" />
+            </div>
+            <strong id="temperature">0</strong>
+            <span class="units">
+              <a href="#" id="celcius-link" class="active">°C</a>
+              |
+              <a href="#" id="fahrenheit-link" class>°F</a>
+            </span>
           </div>
-          <strong id="temperature">0</strong>
-          <span class="units">
-            <a href="#" id="celcius-link" class="active">°C</a>
-            |
-            <a href="#" id="fahrenheit-link" class>°F</a>
-          </span>
-        </div>
-        <div class="col-6">
-          <ul>
-            <li id="description"></li>
-            <li>
-              Humidity:
-              <span id="humidity"></span>
-              %
-            </li>
-            <li>
-              <span id="wind"></span>
-              km/h
-            </li>
-          </ul>
+          <div class="col-6">
+            <ul>
+              <li id="description"></li>
+              <li>
+                Humidity:
+                <span id="humidity"></span>
+                %
+              </li>
+              <li>
+                <span id="wind"></span>
+                km/h
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+      <button class="custom-btn btn-1" id="locationButton">
+        Current weather
+      </button>
     </div>
-    <button class="custom-btn btn-1" id="locationButton">
-      Current weather
-    </button>
-
     <footer>
       <a href="https://weather.com/?Goto=Redirected" target="_blank"
         >For more details about the forecast, click here

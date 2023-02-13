@@ -1,19 +1,29 @@
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+.weather-app-wrapper {
+  margin: 50px;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
 .header {
   line-height: 20px;
   display: block;
   text-align: center;
-  padding-top: 50px;
   width: 100%;
-  font-family: "Josefin Sans", sans-serif;
   font-size: 15px;
   color: rgb(39, 33, 68);
+  padding-bottom: 50px;
 }
 h4 {
   font-size: 15px;
   text-align: justify;
 }
-.temperature {
+.temperature strong {
   font-size: 20px;
+  line-height: 1;
+  font-weight: 400;
 }
 .city {
   text-align: left;
@@ -43,7 +53,6 @@ footer {
   font-size: 15px;
   height: 50px;
   width: max-content;
-  font-family: "josefin Sans", sans-serif;
   color: rgb(39, 33, 68);
 }
 a {
@@ -111,6 +120,12 @@ a {
   font-size: 15px;
   height: max-content;
   width: max-content;
-  font-family: "josefin Sans", sans-serif;
   color: rgb(39, 33, 68);
+}
+.weather-icons.active {
+  color: black;
+  cursor: default;
+}
+.weather-icons.active:hover {
+  text-decoration: none;
 }
