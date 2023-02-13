@@ -33,7 +33,7 @@ function showWeather(response) {
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
-  let iconElement = document.querySelector("icon");
+  let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`

@@ -2,11 +2,15 @@
   line-height: 20px;
   display: block;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 50px;
   width: 100%;
   font-family: "Josefin Sans", sans-serif;
   font-size: 15px;
   color: rgb(39, 33, 68);
+}
+h4 {
+  font-size: 15px;
+  text-align: justify;
 }
 .temperature {
   font-size: 20px;
@@ -18,7 +22,8 @@
 .units {
   font-size: 15px;
   font-weight: thin;
-  display: block;
+  position: relative;
+  text-align: right;
 }
 ul {
   list-style: none;
@@ -102,12 +107,8 @@ a {
   );
   border: none;
 }
-.container {
-  text-align: center;
-  display: block;
-  margin: 0 auto;
+.col-6 {
   font-size: 15px;
-
   height: max-content;
   width: max-content;
   font-family: "josefin Sans", sans-serif;
