@@ -61,3 +61,18 @@ function handleSubmit(event) {
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+function searchPosition(position) {
+  console.log(position);
+  let lon = GeolocationPosition.coords.longitude;
+  let lat = GeolocationPosition.coords.latitude;
+  let key = "9d4d9c743t460of9a295aebfadb92dcc";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${key}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+function getCurrentPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchPosition);
+}
+let locationButton = document.querySelector("#locationButton");
+locationButton.addEventListener("click", getCurrentPosition);
