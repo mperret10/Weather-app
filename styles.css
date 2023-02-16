@@ -1,31 +1,49 @@
 body {
   font-family: "Josefin Sans", sans-serif;
 }
-.weather-app-wrapper {
-  margin: 50px 250px;
-  padding: 20px;
-  border: 1px solid #dadde1;
-  border-radius: 5px;
+.box-1 {
   background: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
+  border: 1px solid black;
+  width: 500px;
+  height: 80px;
+  margin: 20px auto;
+  margin-top: 30px;
+  border-radius: 5px;
+  padding: 20px 40px;
+  text-align: left;
+  display: relative;
 }
-.header {
-  line-height: 20px;
-  width: 100%;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 15px;
-  color: rgb(39, 33, 68);
-  padding-top: 40px;
+.box-2 {
+  background: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
+  border: 1px solid black;
+  width: 500px;
+  height: 150px;
+  margin: 30px auto;
+  border-radius: 5px;
+  padding: 20px 30px;
+  text-align: left;
+  display: relative;
+}
+.box-3 {
+  background: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
+  border: 1px solid black;
+  width: 500px;
+  height: 150px;
+  margin: 30px auto;
+  border-radius: 5px;
+  padding: 20px 30px;
 }
 h4 {
   font-size: 15px;
-  text-align: justify;
+  text-align: left;
+  margin-top: -10px;
 }
+
 .temperature {
-  font-size: 30px;
   line-height: 1;
   font-weight: 400;
+  display: block;
+  margin: 0 auto;
 }
 .city {
   text-align: left;
@@ -50,13 +68,14 @@ footer {
   text-align: center;
   display: block;
   margin: 0 auto;
+  margin-top: 20px;
   padding: 30px 50px;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
   font-size: 15px;
   height: 50px;
   width: max-content;
   color: rgb(39, 33, 68);
-  border: 1px solid #dadde1;
+  border: 1px solid black;
   border-radius: 5px;
   background: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
 }
@@ -76,16 +95,10 @@ a {
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
     7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
   font-size: 11px;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  margin-top: 50px;
 }
 
 .btn-1 {
@@ -134,4 +147,18 @@ a {
 }
 .weather-icons.active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+  margin-top: -30px;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.5;
 }

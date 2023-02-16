@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <div class="header">
+    <div class="box-1">
       <form id="search-form">
         <input
           type="search"
@@ -25,17 +25,20 @@
           autofocus="on"
           id="search-text-input"
         />
-        <input type="submit" value="Search" />
+        <input type="submit" value="Search" id="search-button" />
+        <button class="custom-btn btn-1" id="locationButton">
+          Current weather
+        </button>
       </form>
     </div>
-    <div class="weather-app-wrapper">
+    <div class="box-2">
       <div class="container">
         <div class="row">
           <div class="col-6">
             <h4>Today's Date</h4>
             <div class="city" id="city"></div>
             <div class="api weather-icons">
-              <img src id="icon" class="float-left" />
+              <img src id="icon" class="float-left" width="80" />
             </div>
             <strong id="temperature">0</strong>
             <span class="units">
@@ -60,23 +63,39 @@
           </div>
         </div>
       </div>
-      <button class="custom-btn btn-1" id="locationButton">
-        Current weather
-      </button>
     </div>
-    <footer>
-      <a href="https://weather.com/?Goto=Redirected" target="_blank"
-        >For more details about the forecast, click here
-      </a>
 
-      <div>
-        <a
-          href="https://github.com/mperret10?tab=repositories"
-          class="btn btn-primary Repository-btn"
-          >Github Repository</a
-        >
+    <div class="box-3">
+      <div class="weather-forecast">
+        <div class="row">
+          <div class="col-2">
+            <div class="weather-forecast-date"></div>
+            Monday
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons.png"
+              alt=""
+              width="30"
+            />
+            <div class="weqther-forecast-temperature">
+              <span class="weather-forecast-temperature-max">18°</span>
+              <span class="weather-forecast-temperature-min">12°</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
+    </div>
+    <a href="https://weather.com/?Goto=Redirected" target="_blank"
+      >For more details about the forecast, click here
+    </a>
+
+    <div>
+      <a
+        href="https://github.com/mperret10?tab=repositories"
+        class="btn btn-primary Repository-btn"
+        >Github Repository</a
+      >
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>
