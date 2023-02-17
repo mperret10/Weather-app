@@ -162,3 +162,6 @@ a {
 .weather-forecast-temperature-min {
   opacity: 0.5;
 }
+.end-section {
+  font-size: 13px;
+}
