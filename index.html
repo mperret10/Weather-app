@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <div class="box-1">
+    <div class="box">
       <form id="search-form">
         <input
           type="search"
@@ -27,14 +27,13 @@
         />
         <input type="submit" value="Search" id="search-button" />
         <button class="custom-btn btn-1" id="locationButton">
-          Current weather
+          My location
         </button>
       </form>
-    </div>
-    <div class="box-2">
+
       <div class="container">
         <div class="row">
-          <div class="col-6">
+          <div class="col-8">
             <h4>Today's Date</h4>
             <div class="city" id="city"></div>
             <div class="api weather-icons">
@@ -47,7 +46,7 @@
               <a href="#" id="fahrenheit-link" class>°F</a>
             </span>
           </div>
-          <div class="col-6">
+          <div class="col-4">
             <ul>
               <li id="description"></li>
               <li>
@@ -63,22 +62,8 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="box-3">
-      <div class="weather-forecast">
-        <div class="row">
-          <div class="col-2">
-            <div class="weather-forecast-date"></div>
-            Monday
-            <img src width="45" />
-            <div class="weqther-forecast-temperature">
-              <span class="weather-forecast-temperature-max">18°</span>
-              <span class="weather-forecast-temperature-min">12°</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="weather-forecast" id="forecast"></div>
     </div>
     <div class="end-section">
       For more details about the forecast,
