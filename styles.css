@@ -1,59 +1,49 @@
 body {
-  font-family: "Josefin Sans", sans-serif;
-  background-image: url("clouds.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  font-family: "Playfair Display", serif;
+}
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 60%;
+  z-index: -100;
+}
+form {
+  justify-content: center;
 }
 .box {
-  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background: linear-gradient(
+    180.3deg,
+    rgb(221, 221, 221) 5.5%,
+    rgb(110, 136, 161) 90.2%
+  );
   border: 1px solid black;
   border-radius: 5px;
   margin: 100px 80px;
-  padding: 40px 20px;
+  padding: 20px 20px;
+}
+.col {
+  font-size: 15px;
+  color: rgb(39, 33, 68);
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  margin: 30px 10px;
 }
 h4 {
-  font-size: 20px;
+  font-size: 15px;
   font-style: italic;
+  padding-top: 5px;
 }
 ul {
   list-style: none;
 }
-.col-4,
-.col-8 {
-  font-size: 15px;
-  color: rgb(39, 33, 68);
-  margin-top: 30px;
-  margin-bottom: 60px;
-}
-.temperature {
-  line-height: 1;
-  font-weight: 400;
-  font-size: large;
-  position: relative;
-  margin-left: 50px;
-}
-.city {
-  text-align: center;
-  font-size: 25px;
-}
-.units {
-  font-size: 15px;
-  font-weight: thin;
-  position: relative;
-  text-align: center;
-}
-
-a {
-  color: rgb(39, 33, 68);
-  text-decoration: none;
-}
-
 .container {
-  max-width: fit-content;
+  max-width: max-content;
 }
-
 .custom-btn {
-  width: 130px;
+  width: 120px;
   height: 30px;
   color: #000;
   border-radius: 5px;
@@ -85,6 +75,32 @@ a {
     inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
     inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
 }
+.weather-info {
+  border: 0.5px solid black;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+  margin-left: 450px;
+}
+
+strong {
+  font-size: 40px;
+  display: block;
+  margin: 0 auto;
+}
+.city {
+  display: block;
+  font-size: 20px;
+}
+.units {
+  font-size: 15px;
+  font-weight: thin;
+  text-align: center;
+}
+.icon {
+  display: block;
+  text-align: left;
+}
 
 .weather-icons.active {
   color: black;
@@ -94,31 +110,16 @@ a {
 .weather-icons.active:hover {
   text-decoration: none;
 }
-
-.weather-forecast {
-  text-align: center;
-  color: #000;
-  display: flex;
-}
-.weather-forecast-date {
-  font-size: 16px;
-  opacity: 0.5;
-}
-.weather-forecast-temperature-min {
-  opacity: 0.5;
-}
 .end-section {
   font-size: 13px;
+  color: white;
 }
 .Repository-btn {
   font-size: 14px;
-  color: #cfd9df;
-  border-color: #cfd9df;
-  background: rgb(96, 9, 240);
-  background: linear-gradient(
-    0deg,
-    rgba(96, 9, 240, 1) 0%,
-    rgba(129, 5, 240, 1) 100%
-  );
+  color: #000;
   border: none;
+}
+a {
+  text-decoration: none;
+  color: white;
 }

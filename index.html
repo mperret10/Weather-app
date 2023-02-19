@@ -13,9 +13,18 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
+    <video autoplay muted loop>
+      <source src="thunderstorm.mp4" type="video/mp4" />
+    </video>
     <div class="box">
       <form id="search-form">
         <input
@@ -33,11 +42,9 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-8">
-            <h4>Today's Date</h4>
-            <div class="city" id="city"></div>
+          <div class="col">
             <div class="api weather-icons">
-              <img src id="icon" class="float-left" width="80" />
+              <img src id="icon" class="float-left" width="90" />
             </div>
             <strong id="temperature">0</strong>
             <span class="units">
@@ -46,24 +53,31 @@
               <a href="#" id="fahrenheit-link" class>°F</a>
             </span>
           </div>
-          <div class="col-4">
-            <ul>
-              <li id="description"></li>
-              <li>
-                Humidity:
-                <span id="humidity"></span>
-                %
-              </li>
-              <li>
-                <span id="wind"></span>
-                km/h
-              </li>
-            </ul>
+
+          <div class="weather-info">
+            <div class="city" id="city"></div>
+            <div class="col">
+              <h4>Today's Date</h4>
+              <ul>
+                <li id="description"></li>
+                <li>
+                  Humidity:
+                  <span id="humidity"></span>
+                  %
+                </li>
+                <li>
+                  Wind:
+                  <span id="wind"></span>
+                  km/h
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="weather-forecast" id="forecast"></div>
+      <div class="box-2">
+        <div class="weather-forecast row" id="forecast"></div>
+      </div>
     </div>
     <div class="end-section">
       For more details about the forecast,
