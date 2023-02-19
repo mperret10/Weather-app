@@ -17,34 +17,50 @@ if (minutes < 10) {
 }
 h4.innerHTML = `${day} ${hours}:${minutes}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `    <div class="col-2">
-            <div class="weather-forecast-date"></div>
-            ${day}
-            <img src="http://openweathermap.org/img/wn/50d@2x.png"
+  days.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `    <div class="col-2">
+            <div class="weather-forecast-date">${formatDay(
+              forecastDay.dt
+            )}</div>
+            
+            <img src='http://openweathermap.org/img/wn/${
+              day.weather[0].icon
+            }@2x.png'
             alt=""
-            width="45" 
+            width="42" 
             />
             <div class="weather-forecast-temperature">
-              <span class="weather-forecast-temperature-max">18°</span>
-              <span class="weather-forecast-temperature-min">12°</span>
+              <span class="weather-forecast-temperature-max">${Math.round(
+                forecastDay.temp.max
+              )}° </span>
+              <span class="weather-forecast-temperature-min">${Math.round(
+                forecastDay.temp.min
+              )}° </span>
             </div>
-          </div>
-       
+          </div>       
           `;
-
-    forecastHTML = forecastHTML + `</div>`;
-
-    forecastElement.innerHTML = forecastHTML;
+    }
   });
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "9d4d9c743t460of9a295aebfadb92dcc";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showWeather(response) {
