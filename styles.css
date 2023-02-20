@@ -14,7 +14,7 @@ form {
 }
 .box {
   border: 1px solid #dfe9f3;
-  border-radius: 5px;
+  border-radius: 15px;
   margin: 100px 80px;
   padding: 20px 20px;
   font-weight: 800;
@@ -46,13 +46,27 @@ ul {
 .container {
   max-width: max-content;
 }
+.search-button {
+  width: 120px;
+  height: 30px;
+  color: #000;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+  font-size: 10px;
+}
 .custom-btn {
   width: 120px;
   height: 30px;
   color: #000;
   border-radius: 5px;
   padding: 10px 25px;
-  font-family: "Lato", sans-serif;
   font-weight: 500;
   background: transparent;
   cursor: pointer;
@@ -125,6 +139,17 @@ strong {
 .end-section {
   font-size: 13px;
   color: #000;
+  border: 0.5px solid #dfe9f3;
+  border-radius: 5px;
+  font-weight: 800;
+  opacity: 0.9;
+  background: radial-gradient(
+    circle at 1.3% 2.8%,
+    rgb(239, 249, 249) 0%,
+    rgb(182, 199, 226) 100.2%
+  );
+  width: fit-content;
+  padding: 5px 10px;
 }
 .Repository-btn {
   font-size: 14px;
